@@ -5,7 +5,7 @@ using UnityEngine.AI; // debug vNav
 
 public class playerController : MonoBehaviour {
     // private variables store the components from unity to use in scripts
-    private Animator vAnimator; // Stores the animator tab in unity 
+    private Animator vAnimator; // Stores the animator tab in unity and allows us to change it here
     // debuging issue NavMashAgent = NavMeshAgent Missing asembly reference (using UnityEngine.AI) 
     private NavMeshAgent vNavMeshAgent; // Stores the NavMeshAgent (Navigation)
 
@@ -24,6 +24,7 @@ public class playerController : MonoBehaviour {
     void Update() {
 
         // debugging Raycast varaible 
+        
         if (Input.GetMouseButtonDown(0)) {
             // create a ray
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -34,7 +35,7 @@ public class playerController : MonoBehaviour {
                 Debug.Log("We hit " + clicked.collider.name + " " + clicked.point);
                 // move to the point we clicked
                 vNavMeshAgent.destination = clicked.point;
-                // stop any interactions that are occuring
+                // stop any interactions that are occuring // debugging doesn't untarget after focus selected fixed by switching  focus.Unfocused(); and focus = null;
                 removeFocus();
             }
         }
@@ -47,9 +48,6 @@ public class playerController : MonoBehaviour {
                 interaction interaction = clicked.collider.GetComponent<interaction>();
                 if (interaction != null) {
                     setFocus(interaction);
-                }
-                if (vNavMeshAgent.remainingDistance <= interaction.radius) {//debug attempt to fix the character walking outside the radius
-                    
                 }
             }
             
@@ -69,10 +67,19 @@ public class playerController : MonoBehaviour {
     }
 
     void setFocus(interaction newFocus) {
-        focus = newFocus;
-        followTarget(newFocus);
+        if (newFocus != focus) { // debugging cant have multiple focuses at once 
+            if (focus != null) { // debugging only want us to unfocus an object if we have an object to focus otherwise we cant interact with an object
+                focus.Unfocused();
+            }
+                focus = newFocus;
+                followTarget(newFocus);
+        }
+        newFocus.whenFocused(transform);
     }
     void removeFocus() {
+        if (focus != null){
+            focus.Unfocused();
+        }
         focus = null;
         unFollowTarget();
     }
@@ -82,7 +89,7 @@ public class playerController : MonoBehaviour {
         //vNavMeshAgent.updateRotation = false; // debug
     }
     void unFollowTarget() {
-        target = null;
+            target = null;
         //vNavMeshAgent.updateRotation = true; // debug
         vNavMeshAgent.stoppingDistance = 0f;
     }
