@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.AI; // debug vNav
 
@@ -22,7 +21,10 @@ public class playerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         // debugging Raycast varaible 
         
         if (Input.GetMouseButtonDown(0)) {
