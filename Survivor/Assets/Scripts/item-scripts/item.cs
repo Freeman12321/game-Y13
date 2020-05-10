@@ -11,4 +11,7 @@ public class item : ScriptableObject {
     public virtual void Use() {
         Debug.Log("Using " + name);
     }
+    public void removeFromInventory() {
+        inventory.referenceInstance.Remove(this);
+    }
 }
