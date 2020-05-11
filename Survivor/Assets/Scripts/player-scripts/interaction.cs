@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class interaction : MonoBehaviour {
 
-    public float radius = 7f;
+    public float radius;
 
     bool isFocused = false;
 

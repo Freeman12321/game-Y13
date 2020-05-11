@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class playerManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static playerManager referenceInstance;
+
+    void Awake() {
+        referenceInstance = this;
+    }
+
+    public GameObject player;
 }
