@@ -15,5 +15,5 @@ MonoBehaviour:
   icon: {fileID: 0}
   isDefaultItem: 0
   vEquipmentSlots: 0
-  armourModifier: 0
+  armourModifier: 5
   damageModifier: 0

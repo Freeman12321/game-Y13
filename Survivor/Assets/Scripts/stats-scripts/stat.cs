@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
 public class stat {
+
     [SerializeField]
     private int baseValue;
 
@@ -19,9 +20,9 @@ public class stat {
             itemsStats.Add(modifier);
         }
     }
-    public void RemoveItemStats(int modifier) {
+    public void removeItemStats(int modifier) {
         if (modifier != 0) {
-            itemsStats.Add(modifier);
+            itemsStats.Remove(modifier);
         }
     }
 }

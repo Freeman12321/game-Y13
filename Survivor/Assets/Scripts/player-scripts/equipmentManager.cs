@@ -30,7 +30,7 @@ public class equipmentManager : MonoBehaviour {
             Inventory.Add(oldItem);
         }
         if (onEquipmentChanged != null) {
-            onEquipmentChanged.Invoke(oldItem, null);
+            onEquipmentChanged.Invoke(Item, oldItem);
         }
         currentEquipment[slotIndex] = Item;
     }
@@ -39,11 +39,15 @@ public class equipmentManager : MonoBehaviour {
             equipment oldItem = currentEquipment[slotIndex];
             Inventory.Add(oldItem);
             currentEquipment[slotIndex] = null;
+            if (onEquipmentChanged != null) {
+                onEquipmentChanged.Invoke(null, oldItem);
+            }
         }
     }
     public void UnequipAll() {
-        for (int x = 0; x < currentEquipment.Length;x = x + 1)
-        Unequip(x);
+        for (int x = 0; x < currentEquipment.Length; x = x + 1) {
+            Unequip(x);
+        }
     }
     void Update()
     {
