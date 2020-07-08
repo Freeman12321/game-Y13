@@ -4,54 +4,54 @@ using UnityEngine;
 
 public class equipmentManager : MonoBehaviour {
 
-    public static equipmentManager referenceInstance;
+    public static equipmentManager referenceInstance; // create a variable shared by all instances of the class
 
     void Awake() {
-        referenceInstance = this;
+        referenceInstance = this; // at the start of the game set the instance equal to this component meaning we can access the inventory component by using inventory.referenceInstance
     }
 
-    equipment[] currentEquipment;
+    equipment[] currentEquipment; // create a list to keep track of current equipment
 
-    public delegate void OnEquipmentChanged(equipment oldItem, equipment newItem);
-    public OnEquipmentChanged onEquipmentChanged;
+    public delegate void OnEquipmentChanged(equipment oldItem, equipment newItem); // method that takes in the already equiped item and a previous item
+    public OnEquipmentChanged onEquipmentChanged; // when the equipment changes
 
-    inventory Inventory;
+    inventory Inventory; // refer to inventory 
     void Start()  {
-        Inventory = inventory.referenceInstance;
-        int numberOfEquipSlots = System.Enum.GetNames(typeof(EquipmentSlots)).Length;
-        currentEquipment = new equipment[numberOfEquipSlots];
+        Inventory = inventory.referenceInstance; // set inventory to the inventory class
+        int numberOfEquipSlots = System.Enum.GetNames(typeof(EquipmentSlots)).Length; // get the number of possible equip slots
+        currentEquipment = new equipment[numberOfEquipSlots]; // make the equipment array equal to this new number
     }
 
-    public void Equip(equipment Item) {
-        int slotIndex = (int)Item.vEquipmentSlots;
-        equipment oldItem = null;
-        if (currentEquipment[slotIndex] != null) {
-            oldItem = currentEquipment[slotIndex];
-            Inventory.Add(oldItem);
+    public void Equip(equipment Item) { // create a method that takes in an equipment 
+        int slotIndex = (int)Item.vEquipmentSlots; // set the slot index to the correct slot the item should go in eg helmets go to helmet slot
+        equipment oldItem = null; // we have no old item yet so discard previous old items
+        if (currentEquipment[slotIndex] != null) { // if the slot is not empty 
+            oldItem = currentEquipment[slotIndex]; // set the old item to the already equiped item
+            Inventory.Add(oldItem); // add the old item back to the inventory when we equip a new item 
         }
-        if (onEquipmentChanged != null) {
-            onEquipmentChanged.Invoke(Item, oldItem);
+        if (onEquipmentChanged != null) { // when there is a change in equipment
+            onEquipmentChanged.Invoke(Item, oldItem); // change the items correctly (remove old item and add new item)
         }
-        currentEquipment[slotIndex] = Item;
+        currentEquipment[slotIndex] = Item; // get the index of the slot in equipment e.g head = 0 chest = 1 etc  
     }
-    public void Unequip(int slotIndex) {
-        if (currentEquipment[slotIndex] != null) {
-            equipment oldItem = currentEquipment[slotIndex];
-            Inventory.Add(oldItem);
-            currentEquipment[slotIndex] = null;
-            if (onEquipmentChanged != null) {
-                onEquipmentChanged.Invoke(null, oldItem);
+    public void Unequip(int slotIndex) { // take in a number
+        if (currentEquipment[slotIndex] != null) { // if the particular slot number is full 
+            equipment oldItem = currentEquipment[slotIndex]; // get the item currently equiped
+            Inventory.Add(oldItem); // add the item back to the inventory
+            currentEquipment[slotIndex] = null; // remove the item from the equip slot
+            if (onEquipmentChanged != null) { // if there is a change
+                onEquipmentChanged.Invoke(null, oldItem); // change the items correctly to the inventory and to the equipment no new item and remove old item
             }
         }
     }
     public void UnequipAll() {
-        for (int x = 0; x < currentEquipment.Length; x = x + 1) {
-            Unequip(x);
+        for (int x = 0; x < currentEquipment.Length; x = x + 1) { // if an int is less than the length of equip slots
+            Unequip(x); // unequip each item in  0, 1, 2, 3, 4, 5, 6
         }
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U)) {
+        if (Input.GetKeyDown(KeyCode.U)) { // if U 
             UnequipAll();
         }
     }

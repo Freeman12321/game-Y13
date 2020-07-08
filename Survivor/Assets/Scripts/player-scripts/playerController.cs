@@ -10,7 +10,7 @@ public class playerController : MonoBehaviour {
 
     public interaction focus; // create a focus variable that occurs when we right click a unity object with the interaction script on it
 
-    public Transform target; // create a 
+    public Transform target; // create a transform to follow the focus
 
     public bool vRunning = false; // is our character running in animations
     // Use this for initialization
@@ -25,9 +25,8 @@ public class playerController : MonoBehaviour {
             return;
         } // if we click on the inventory don't continue interacting with the game behind it
         // debugging Raycast varaible 
-        
         if (Input.GetMouseButtonDown(0)) { // if we left click
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // create a ray
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // create a ray to the mouse position
             RaycastHit clicked; // if it hits assign value to clicked variable
 
             // if the ray connects with the world (NavMeshAgent)
@@ -45,11 +44,11 @@ public class playerController : MonoBehaviour {
             if (Physics.Raycast(ray, out clicked)) { // if the ray hits something
                 //Debug.Log("We Interacted with " + clicked.collider.name);
                 interaction interaction = clicked.collider.GetComponent<interaction>(); // set interaction variable to what we clicked
-                if (interaction != null) { // if we have an interaction
+                if (interaction != null) { // if we have an interaction on the object clicked
                     setFocus(interaction); // set the players focus that interaction 
                 }
             }
-            
+
         }
         if (target != null) { // if we have a target
             vNavMeshAgent.SetDestination(target.position); // set the players destination to that target
@@ -92,7 +91,7 @@ public class playerController : MonoBehaviour {
     void unFollowTarget() {
             target = null; // stop following the interaction
         //vNavMeshAgent.updateRotation = true; // debug
-        vNavMeshAgent.stoppingDistance = 0f; // stop moving
+        vNavMeshAgent.stoppingDistance = 0f; // no stopping distance (as there is no target)
     }
     void faceTarget() {
         Vector3 direction = (target.position - transform.position).normalized; // get direction from our position to the targets position

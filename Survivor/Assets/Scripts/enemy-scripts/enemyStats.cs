@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class enemyStats : characterStats {
 
-    public GameObject player;
-    public void destroySoldier() {
-        Destroy(player.transform.parent.parent);
-    }
+    public GameObject hitbox; // reference the hitbox
+    public GameObject enemy; // reference the enemy
 
     public override void Death() {
         base.Death();
         //ragdoll effect/death animation
         //loot
         //cutscene
-        Destroy(gameObject);
-        Destroy(player);
+            
+        Destroy(hitbox); 
+        Destroy(enemy);
     }
 }
