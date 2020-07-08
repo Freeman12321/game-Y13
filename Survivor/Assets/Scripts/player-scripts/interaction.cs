@@ -20,29 +20,29 @@ public class interaction : MonoBehaviour {
         if (isFocused && !hasInteracted) { // if we are moving to the target but have not entered interaction range
             //Debug.Log("Focused");
             isFocused = true; // we have a focus
-            float distance = Vector3.Distance(player.position, transform.position); 
-            if (distance <= radius) {
+            float distance = Vector3.Distance(player.position, transform.position); // create a distance between the player and the object of interaction
+            if (distance <= radius) { // if the distance is within the range of the interaction 
                 //Debug.Log("Interact");
-                Interact(); // interact with it: since interaction will be different individual scripts 
+                Interact(); // interact with it: since interaction will be different individual scripts we override this method in different scripts
                 hasInteracted = true; // we have an interaction
             }
         }
     }
 
-    public void whenFocused (Transform playerTransform) {
-        isFocused = true;
-        player = playerTransform;
-        hasInteracted = false;
+    public void whenFocused (Transform playerTransform) { // take in a transform
+        isFocused = true; // we are forcused on an object
+        player = playerTransform; // the position of the player is equal to the transform
+        hasInteracted = false; // we have not yet interacted
     }
 
     public void Unfocused () {
-        isFocused = false;
-        player = null;
-        hasInteracted = false;
+        isFocused = false; // we are not focused on an object
+        player = null; // there is no position to move to
+        hasInteracted = false; // we have not interacted
     }
 
-    void OnDrawGizmosSelected () {
-        Gizmos.color = Color.black;
-        Gizmos.DrawWireSphere(transform.position, radius);
+    void OnDrawGizmosSelected () { // make a gizmos
+        Gizmos.color = Color.black; // make the colour black
+        Gizmos.DrawWireSphere(transform.position, radius); // draw a wire sphere at the current position of the item in the scene editor make it radius long
     }
 }
