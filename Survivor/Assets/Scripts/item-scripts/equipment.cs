@@ -8,9 +8,9 @@ public class equipment : item {
 
     public int armourModifier = 0; // armour value of an item
     public int damageModifier = 0; // damage value of an item
+    // public int maxHeathModifier = 0; // Max health value of an item 
 
-    public override void Use()
-    {
+    public override void Use() {
         // works but only items from the first inventory slot get equiped you can't equip through slots 2-20
         base.Use();
         equipmentManager.referenceInstance.Equip(this); // when an item is used from the inventory equip the item

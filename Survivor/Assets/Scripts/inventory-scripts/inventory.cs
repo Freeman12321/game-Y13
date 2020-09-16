@@ -12,7 +12,7 @@ public class inventory : MonoBehaviour {
 
     public delegate void OnItemChanged(); // define the delegate type
 
-    public OnItemChanged onItemChangedCallBack; // when ever something changes in our this will be called
+    public OnItemChanged onItemChangedCallBack; // whenever something changes in our this will be called
 
     void Awake() {
         if (referenceInstance != null) {
@@ -20,7 +20,7 @@ public class inventory : MonoBehaviour {
         }
         referenceInstance = this; // assigns reference instance to this class
     }
-    public List<item> items = new List<item>(); // Create a public list of items 
+    public List<item> items = new List<item>(); // Create a public list of items (refering to the item class)
 
     public void Add(item Item) { // add an item
         if (!Item.isDefaultItem) { // if the item is not a default item

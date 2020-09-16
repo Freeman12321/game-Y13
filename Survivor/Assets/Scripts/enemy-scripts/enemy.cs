@@ -13,12 +13,12 @@ public class enemy : interaction {
     }
     // debuging trouble shooting 'Interact' not being called when attacking enemy is not present when interacting with enemy 
     // the if statement calling interact from "interaction" script is working 
-    // Solution is enemy - enemyStats - enemyControler all have to be on the enemy hit box to function 
+    // Solution is enemy - enemyStats - enemyControler scripts all have to be on the enemy hit box to function 
     public override void Interact() {
         //Debug.Log("attacking enemy");
         base.Interact();
         characterCombat playerCombat = vPlayer.player.GetComponent<characterCombat>(); // get the character combat if the player is close 
-        if (playerCombat != null) { // if the charactor combat is true 
+        if (playerCombat != null) { // if the character combat is true 
             playerCombat.Attack(stats); // attack the player and take the player stats down by the same amount as the enemy stats
         }
     }

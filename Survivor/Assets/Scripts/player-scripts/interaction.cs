@@ -30,7 +30,7 @@ public class interaction : MonoBehaviour {
     }
 
     public void whenFocused (Transform playerTransform) { // take in a transform
-        isFocused = true; // we are forcused on an object
+        isFocused = true; // we are focused on an object
         player = playerTransform; // the position of the player is equal to the transform
         hasInteracted = false; // we have not yet interacted
     }

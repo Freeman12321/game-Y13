@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="211mm"
+   viewBox="0 0 744.09449 747.63779"
+   id="svg3353"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="golden-helmet-icon.svg">
+  <defs
+     id="defs3355">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4245"
+       x="-0.41406087"
+       width="1.8281217"
+       y="-0.53039014"
+       height="2.0607803">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="13.891785"
+         id="feGaussianBlur4247" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4249"
+       x="-0.04806552"
+       width="1.096131"
+       y="-0.052155486"
+       height="1.104311">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="13.891785"
+         id="feGaussianBlur4251" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="375"
+     inkscape:cy="249.1266"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3358">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-304.72441)">
+    <path
+       sodipodi:nodetypes="ccccccccccccc"
+       inkscape:connector-curvature="0"
+       id="path4219"
+       d="M 372.44508,389.62492 C -72.45191,471.21685 55.413629,784.5856 30.183399,1026.8295 l 318.260301,0 7.32837,-124.99021 -126.67598,-205.83035 52.34545,-32.67718 104.6909,216.45038 83.75271,-217.2673 49.20471,37.57874 -104.69091,205.83015 -7.32834,122.94907 316.75522,-3.2723 C 679.58198,850.28765 854.24569,468.44323 372.44508,389.62492 Z"
+       style="fill:#ffe000;fill-rule:evenodd;stroke:#000000;stroke-width:2.537;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;filter:url(#filter4249);stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       style="opacity:1;fill:#ffe000;fill-opacity:1;stroke:#000000;stroke-width:1.657;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4160"
+       width="80.520248"
+       height="62.859924"
+       x="337.23474"
+       y="333.33673" />
+    <path
+       style="fill:#ffe000;fill-rule:evenodd;stroke:#000000;stroke-width:1.737;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 372.44508,389.62492 C -72.45191,471.21685 55.413629,784.5856 30.183399,1026.8295 l 318.260301,0 7.32837,-124.99021 -126.67598,-205.83035 52.34545,-32.67718 104.6909,216.45038 83.75271,-217.2673 49.20471,37.57874 -104.69091,205.83015 -7.32834,122.94907 316.75522,-3.2723 C 679.58198,850.28765 854.24569,468.44323 372.44508,389.62492 Z"
+       id="path3336"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccc" />
+    <rect
+       y="336.19388"
+       x="337.23474"
+       height="62.859924"
+       width="80.520248"
+       id="rect4217"
+       style="opacity:1;fill:#ffe000;fill-opacity:1;stroke:#000000;stroke-width:3.95694399;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4245)" />
+  </g>
+</svg>

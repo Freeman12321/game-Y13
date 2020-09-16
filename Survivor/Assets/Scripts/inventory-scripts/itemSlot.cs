@@ -11,8 +11,7 @@ public class itemSlot : MonoBehaviour {
 
     public void addItem(item newItem) {
         item = newItem; // update the item slot to the item that should be in it
-        //debug Image = Image.icon;
-        icon.sprite = item.icon; // change the graphics acordingly
+        icon.sprite = item.icon; // change the graphics accordingly
         icon.enabled = true; // enable the icon
         removeButton.interactable = true; // enable the remove button
     }

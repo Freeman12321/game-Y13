@@ -25,7 +25,7 @@ public class enemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float distance = Vector3.Distance(target.position, transform.position); // holds the distance between the enemy and the player
-        if (distance <= senseRange) { // if this distance is within the enemys sense range
+        if (distance <= senseRange) { // if this distance is within the enemy's sense range
             vRunning = true; // trigger running animation
             vNavMeshAgent.SetDestination(target.position); // navigate towards the player
             if (distance <= vNavMeshAgent.stoppingDistance) { // if the distance between the enemy and player 
@@ -35,13 +35,13 @@ public class enemyController : MonoBehaviour {
                     combat.Attack(targetStats); // attack the stats 
                     vRunning = false; // stop running
                 }
-                faceTarget(); // while shooting face the direction of the target
+                FaceTarget(); // while shooting face the direction of the target
             }
             vAnimator.SetBool("running", vRunning); // set the running animation 
         }
     }
     //debug tried to call public void face (playerController) target but the transforms for the player don't apply to the enemy
-    void faceTarget() { // see playerController 
+    void FaceTarget() { // see playerController 
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f); // debug

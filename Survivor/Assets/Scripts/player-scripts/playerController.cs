@@ -13,6 +13,9 @@ public class playerController : MonoBehaviour {
     public Transform target; // create a transform to follow the focus
 
     public bool vRunning = false; // is our character running in animations
+
+    public GameObject bullet; // bullet the player will shoot
+
     // Use this for initialization
     void Start() {
         vAnimator = GetComponent<Animator>(); // create a variable where we can access the Animator
@@ -28,7 +31,6 @@ public class playerController : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) { // if we left click
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // create a ray to the mouse position
             RaycastHit clicked; // if it hits assign value to clicked variable
-
             // if the ray connects with the world (NavMeshAgent)
             if (Physics.Raycast(ray, out clicked)) { // if the ray hits something
                 //Debug.Log("We hit " + clicked.collider.name + " " + clicked.point);
@@ -45,7 +47,7 @@ public class playerController : MonoBehaviour {
                 //Debug.Log("We Interacted with " + clicked.collider.name);
                 interaction interaction = clicked.collider.GetComponent<interaction>(); // set interaction variable to what we clicked
                 if (interaction != null) { // if we have an interaction on the object clicked
-                    setFocus(interaction); // set the players focus that interaction 
+                    setFocus(interaction); // set the players focus that interaction
                 }
             }
 

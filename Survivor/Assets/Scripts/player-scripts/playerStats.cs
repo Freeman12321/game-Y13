@@ -15,10 +15,12 @@ public class playerStats : characterStats {
         if (newItem != null) { // if there is a new item
             armour.addItemStats(newItem.armourModifier); // add the new item's armour
             damage.addItemStats(newItem.damageModifier); // add the new item's damage
+            //maxHealth.addItemStats(newItem.maxHeathModifier); // add the new item's health
         }
         if (oldItem != null) { // if there is an old item
             armour.removeItemStats(oldItem.armourModifier); // remove the old item's armour
             damage.removeItemStats(oldItem.damageModifier); // remove the old item's damage
+            //maxHealth.removeItemStats(oldItem.maxHeathModifier); // remove the old item's health
         }
     }
     public override void Death() { // when the player dies

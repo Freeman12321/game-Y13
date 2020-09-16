@@ -9,13 +9,15 @@ public class characterCombat : MonoBehaviour {
     public float attackCooldown = 0f; // the cooldown between each attack
 
     characterStats CharactersStats; // reference character stats
-
+    Animator vAnimator;
     void Start() {
+        vAnimator = GetComponent<Animator>(); // define animator
         CharactersStats = GetComponent<characterStats>(); // define character stats
     }
 
     void Update() {
         attackCooldown -= Time.deltaTime; // decrease the time linearly by subtracting the amount of seconds in the previous frame every frame
+        //vAnimator.SetBool("shooting", vShooting); // set the shooting animation to shooting (Debug) Not SetBool rather SetTrigger.
     }
 
     public void Attack (characterStats stats) { // take in a characters stats 
@@ -23,6 +25,7 @@ public class characterCombat : MonoBehaviour {
             Debug.Log("Attacking" + transform.name);
             stats.TakeDamage(CharactersStats.damage.getValue()); // get the characters stats and subtract the correct amount of damage
             attackCooldown = 1f/attackSpeed; // reset the attack cooldown decrease if the attack speed is higher
+            vAnimator.SetTrigger("shooting");
         }
     }
 }

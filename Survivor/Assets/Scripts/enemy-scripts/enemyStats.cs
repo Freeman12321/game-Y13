@@ -6,13 +6,12 @@ public class enemyStats : characterStats {
 
     public GameObject hitbox; // reference the hitbox
     public GameObject enemy; // reference the enemy
-
+    public healthBar vHealthbar;
+    void Start() {
+        vHealthbar = GetComponent<healthBar>();
+    }
     public override void Death() {
         base.Death();
-        //ragdoll effect/death animation
-        //loot
-        //cutscene
-            
         Destroy(hitbox); 
         Destroy(enemy);
     }
