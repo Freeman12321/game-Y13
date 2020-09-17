@@ -17,7 +17,11 @@ public class enemySpawner : MonoBehaviour {
         spawnCooldown -= Time.deltaTime; // subtracts the time it took to complete the frame every frame thus every frame rate will produce the same decrease in the cooldown 
     }
     IEnumerator EnemySpawn() {
+<<<<<<< HEAD
         /* This code did not work optimally because it is not conditional and should be looped hence
+=======
+        /* This code did not work because it is not conditional and should be looped hence
+>>>>>>> 4be645352fa7435b49f0624285de94fb540b56fb
         if (spawnCooldown < 0) {
             xPos = Random.Range(-9, 9);
             zPos = Random.Range(-9, 9);

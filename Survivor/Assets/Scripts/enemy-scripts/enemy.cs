@@ -18,7 +18,11 @@ public class enemy : interaction {
         //Debug.Log("attacking enemy");
         base.Interact();
         characterCombat playerCombat = vPlayer.player.GetComponent<characterCombat>(); // get the character combat if the player is close 
+<<<<<<< HEAD
         if (playerCombat != null) { // if the character combat is true 
+=======
+        if (playerCombat != null) { // if the charactor combat is true 
+>>>>>>> 4be645352fa7435b49f0624285de94fb540b56fb
             playerCombat.Attack(stats); // attack the player and take the player stats down by the same amount as the enemy stats
         }
     }

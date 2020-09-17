@@ -12,7 +12,11 @@ public class equipmentManager : MonoBehaviour {
 
     equipment[] currentEquipment; // create a list to keep track of current equipment
 
+<<<<<<< HEAD
     public delegate void OnEquipmentChanged(equipment oldItem, equipment newItem); // method that takes in the already equipped item and a previous item
+=======
+    public delegate void OnEquipmentChanged(equipment oldItem, equipment newItem); // method that takes in the already equiped item and a previous item
+>>>>>>> 4be645352fa7435b49f0624285de94fb540b56fb
     public OnEquipmentChanged onEquipmentChanged; // when the equipment changes
 
     inventory Inventory; // refer to inventory 
@@ -22,12 +26,20 @@ public class equipmentManager : MonoBehaviour {
         currentEquipment = new equipment[numberOfEquipSlots]; // make the equipment array equal to this new number
     }
 
+<<<<<<< HEAD
     public void Equip(equipment Item) { // create a method that takes in an equipment
         //Debug.Log("Equiping " + item.name);
         int slotIndex = (int)Item.vEquipmentSlots; // set the slot index to the correct slot the item should go in eg helmets go to helmet slot
         equipment oldItem = null; // we have no old item yet so discard previous old items
         if (currentEquipment[slotIndex] != null) { // if the slot is not empty 
             oldItem = currentEquipment[slotIndex]; // set the old item to the already equipped item
+=======
+    public void Equip(equipment Item) { // create a method that takes in an equipment 
+        int slotIndex = (int)Item.vEquipmentSlots; // set the slot index to the correct slot the item should go in eg helmets go to helmet slot
+        equipment oldItem = null; // we have no old item yet so discard previous old items
+        if (currentEquipment[slotIndex] != null) { // if the slot is not empty 
+            oldItem = currentEquipment[slotIndex]; // set the old item to the already equiped item
+>>>>>>> 4be645352fa7435b49f0624285de94fb540b56fb
             Inventory.Add(oldItem); // add the old item back to the inventory when we equip a new item 
         }
         if (onEquipmentChanged != null) { // when there is a change in equipment
@@ -38,7 +50,11 @@ public class equipmentManager : MonoBehaviour {
     public void Unequip(int slotIndex) { // take in a number
         if (currentEquipment[slotIndex] != null) { // if the particular slot number is full 
             equipment oldItem = currentEquipment[slotIndex]; // get the item currently equiped
+<<<<<<< HEAD
             Inventory.Add(oldItem); // add the already equipped item back to the inventory
+=======
+            Inventory.Add(oldItem); // add the item back to the inventory
+>>>>>>> 4be645352fa7435b49f0624285de94fb540b56fb
             currentEquipment[slotIndex] = null; // remove the item from the equip slot
             if (onEquipmentChanged != null) { // if there is a change
                 onEquipmentChanged.Invoke(null, oldItem); // change the items correctly to the inventory and to the equipment no new item and remove old item
@@ -50,8 +66,14 @@ public class equipmentManager : MonoBehaviour {
             Unequip(x); // unequip each item in  0, 1, 2, 3, 4, 5, 6
         }
     }
+<<<<<<< HEAD
     void Update() {
         if (Input.GetKeyDown(KeyCode.U)) { // if U is pressed
+=======
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U)) { // if U 
+>>>>>>> 4be645352fa7435b49f0624285de94fb540b56fb
             UnequipAll();
         }
     }

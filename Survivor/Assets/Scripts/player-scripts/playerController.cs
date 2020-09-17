@@ -47,7 +47,11 @@ public class playerController : MonoBehaviour {
                 //Debug.Log("We Interacted with " + clicked.collider.name);
                 interaction interaction = clicked.collider.GetComponent<interaction>(); // set interaction variable to what we clicked
                 if (interaction != null) { // if we have an interaction on the object clicked
+<<<<<<< HEAD
                     setFocus(interaction); // set the players focus that interaction
+=======
+                    setFocus(interaction); // set the players focus that interaction 
+>>>>>>> 4be645352fa7435b49f0624285de94fb540b56fb
                 }
             }
 

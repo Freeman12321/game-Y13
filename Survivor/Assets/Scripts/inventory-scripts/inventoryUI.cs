@@ -32,7 +32,11 @@ public class inventoryUI : MonoBehaviour {
         }
 		for (int i = 0; i < slots.Length; i = i + 1) { // create a for loop that 
             if (i < vInventory.items.Count) { // if there are more items to add
+<<<<<<< HEAD
                 slots[i].addItem(vInventory.items[i]); // take the ith slot (index) pass in the corresponding item from the inventory items array
+=======
+                slots[i].addItem(vInventory.items[i]); // take the ith slot pass in the corresponding item from the inventory items array
+>>>>>>> 4be645352fa7435b49f0624285de94fb540b56fb
             }
             else { // there are no more items to add
                 slots[i].clearItem(); // clear the ith slots

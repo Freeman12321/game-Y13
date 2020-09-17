@@ -12,7 +12,11 @@ public class inventory : MonoBehaviour {
 
     public delegate void OnItemChanged(); // define the delegate type
 
+<<<<<<< HEAD
     public OnItemChanged onItemChangedCallBack; // whenever something changes in our this will be called
+=======
+    public OnItemChanged onItemChangedCallBack; // when ever something changes in our this will be called
+>>>>>>> 4be645352fa7435b49f0624285de94fb540b56fb
 
     void Awake() {
         if (referenceInstance != null) {
@@ -20,7 +24,11 @@ public class inventory : MonoBehaviour {
         }
         referenceInstance = this; // assigns reference instance to this class
     }
+<<<<<<< HEAD
     public List<item> items = new List<item>(); // Create a public list of items (refering to the item class)
+=======
+    public List<item> items = new List<item>(); // Create a public list of items 
+>>>>>>> 4be645352fa7435b49f0624285de94fb540b56fb
 
     public void Add(item Item) { // add an item
         if (!Item.isDefaultItem) { // if the item is not a default item
