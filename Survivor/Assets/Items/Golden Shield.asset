@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481327e13f2cd8b479ee32a50968d277, type: 3}
   m_Name: Golden Shield
   m_EditorClassIdentifier: 
-  itemname: New Item
-  icon: {fileID: 0}
+  itemname: Golden Shield
+  icon: {fileID: 21300000, guid: c38fed7178a8cd84d85f01b5f12ea6c7, type: 3}
   isDefaultItem: 0
-  vEquipmentSlots: 0
-  armourModifier: 0
-  damageModifier: 0
+  vEquipmentSlots: 4
+  armourModifier: 6
+  damageModifier: 2

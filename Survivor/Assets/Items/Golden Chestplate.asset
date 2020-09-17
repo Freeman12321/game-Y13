@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481327e13f2cd8b479ee32a50968d277, type: 3}
   m_Name: Golden Chestplate
   m_EditorClassIdentifier: 
-  itemname: New Item
-  icon: {fileID: 0}
+  itemname: Golden Chestplate
+  icon: {fileID: 21300000, guid: 5d9506e6af1bf8b43a2bb2901c627b8f, type: 3}
   isDefaultItem: 0
-  vEquipmentSlots: 0
-  armourModifier: 0
+  vEquipmentSlots: 1
+  armourModifier: 6
   damageModifier: 0
